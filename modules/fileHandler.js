@@ -4,11 +4,11 @@ const path = require('path');
 const filePath = path.join(__dirname, '../employees.json');
 
 async function read() {
-    try {
+   try {
         const data = await fs.readFile(filePath, 'utf-8');
-        return JSON.parse(data);
+        return JSON.parse(data || "[]");
     } catch (err) {
-        console.error("Read Error:", err.message);
+        await write([]);   // create file if missing
         return [];
     }
 }

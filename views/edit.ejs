@@ -1,23 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Edit Employee</title>
-  <link rel="stylesheet" href="/style.css">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
 
-<div class="form-container">
-  <h2>Edit Employee</h2>
+<body class="edit-page">
 
-  <form action="/edit/<%= employee.id %>" method="POST">
-    <input type="text" name="name" value="<%= employee.name %>" required>
-    <input type="text" name="department" value="<%= employee.department %>" required>
-    <input type="number" name="basicSalary" value="<%= employee.basicSalary %>" required>
+<div class="form-wrapper">
 
-    <button type="submit">Update Employee</button>
-  </form>
+  <div class="form-card">
 
-  <a href="/">⬅ Back</a>
+    <h2>Edit Employee</h2>
+
+    <form action="/edit/<%= employee.id %>" method="POST">
+
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name"
+        value="<%= employee.name %>" required>
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+
+        <select name="department" required>
+
+          <option value="Sales"
+          <%= employee.department === "Sales" ? "selected" : "" %>>
+          Sales</option>
+
+          <option value="HR"
+          <%= employee.department === "HR" ? "selected" : "" %>>
+          HR</option>
+
+          <option value="Engineering"
+          <%= employee.department === "Engineering" ? "selected" : "" %>>
+          Engineering</option>
+
+          <option value="Finance"
+          <%= employee.department === "Finance" ? "selected" : "" %>>
+          Finance</option>
+
+          <option value="Marketing"
+          <%= employee.department === "Marketing" ? "selected" : "" %>>
+          Marketing</option>
+
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Basic Salary</label>
+        <input type="number" name="basicSalary"
+        value="<%= employee.basicSalary %>" required>
+      </div>
+
+      <div class="button-group">
+        <a href="/" class="cancel-btn">Back</a>
+        <button type="submit" class="submit-btn">
+          Update Employee
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
 </div>
 
 </body>

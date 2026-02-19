@@ -215,14 +215,16 @@ tbody tr:hover {
   margin-bottom: 8px;
   font-weight: 500;
 }
-
 input[type="text"],
+input[type="number"],
 select,
 textarea {
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+
 
 textarea {
   height: 80px;
@@ -289,4 +291,79 @@ textarea {
     display: flex;
     gap: 20px;
     align-items: center;
+}
+input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+
+
+body.edit-page {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #f4f5f7;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.edit-page .form-wrapper {
+  all: unset;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.edit-page .form-card {
+  all: unset;
+  background: white;
+  width: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  display: block;
+}
+
+body.edit-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body.edit-page .form-group {
+  margin-bottom: 15px;
+}
+
+body.edit-page label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+body.edit-page input,
+body.edit-page select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+body.edit-page .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+body.edit-page .submit-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+body.edit-page .cancel-btn {
+  background: #ccc;
+  color: black;
 }

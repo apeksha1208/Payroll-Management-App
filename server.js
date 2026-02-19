@@ -2,12 +2,15 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const fs = require("fs").promises;
+const fileHandler = require('./modules/fileHandler');
+
 
 const PORT = process.env.PORT || 3000;
 const FILE_PATH = path.join(__dirname, "employees.json");
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.set("view engine", "ejs");
 
 // Helper functions
@@ -91,6 +94,8 @@ app.post('/edit/:id', async (req, res) => {
     res.redirect('/');
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+app.listen(PORT, async () => {
+    console.log(`Server running on port ${PORT}`);
+    const employees = await fileHandler.read();
+    console.log("Loaded Employees:", employees);
 });
