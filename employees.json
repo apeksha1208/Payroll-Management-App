@@ -24,9 +24,15 @@
     "basicSalary": 50000
   },
   {
-    "id": 1771525742836,
+    "id": 1771479764125,
+    "name": "dev sharma",
+    "department": "Finance",
+    "basicSalary": 68464
+  },
+  {
+    "id": 1771309215146,
     "name": "Apeksha Singh",
-    "department": "Others",
-    "basicSalary": 50000
+    "department": "Engineer",
+    "basicSalary": 40000
   }
 ]
